@@ -16,3 +16,11 @@
         name: "{{ vm_name }}"
         folder: "{{ vcenter_destination_folder }}"
         state: "{{ vm_state }}"
+
+    - name: Gather guest info
+      vmware.vmware.guest_info:
+        validate_certs: false
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        guest_name: "{{ vm_name }}"
