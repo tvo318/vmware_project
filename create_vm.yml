@@ -4,18 +4,18 @@
   become: false
   gather_facts: false
   tasks:
-    #- name: create VM
-    #  community.vmware.vmware_guest:
-    #    hostname: "{{ vcenter_hostname }}"
-    #    username: "{{ vcenter_username }}"
-    #    password: "{{ vcenter_password }}"
-    #    validate_certs: "{{ vcenter_validate_certs }}"
-    #    datacenter: "{{ vcenter_datacenter }}"
-    #    cluster: "{{ vcenter_cluster }}"
-    #    template: "{{ vm_template }}"
-    #    name: "{{ vm_name }}"
-    #    folder: "{{ vcenter_destination_folder }}"
-    #    state: "{{ vm_state }}"
+    - name: create VM
+      community.vmware.vmware_guest:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: "{{ vcenter_validate_certs }}"
+        datacenter: "{{ vcenter_datacenter }}"
+        cluster: "{{ vcenter_cluster }}"
+        template: "{{ vm_template }}"
+        name: "{{ vm_name }}"
+        folder: "{{ vcenter_destination_folder }}"
+        state: "{{ vm_state }}"
 
     - name: Gather guest info
       vmware.vmware.guest_info:
