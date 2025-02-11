@@ -2,3 +2,6 @@ collections:
   - name: https://github.com/pb82/vmware.vmware.git
     type: git
     version: main
+  - name: https://github.com/ansible-collections/community.vmware
+    type: git
+    version: main
